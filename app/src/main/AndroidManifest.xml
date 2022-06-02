@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.drcreditdev">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        tools:replace="android:icon"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DrCreditDev"
+        tools:targetApi="31">
+        <activity
+            android:name=".creditCard.credit_home_page"
+            android:exported="false" />
+        <activity
+            android:name=".creditCard.error_page"
+            android:exported="false" />
+        <activity
+            android:name=".creditCard.procedding_page"
+            android:exported="false" />
+        <activity
+            android:name=".creditCard.user_details"
+            android:exported="false" />
+        <activity
+            android:name=".login.Otp_verification"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+        <activity
+            android:name=".login.userNumber"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+        <activity
+            android:name=".login.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

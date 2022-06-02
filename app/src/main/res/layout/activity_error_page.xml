@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".creditCard.error_page"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/inter_bold"
+            android:text="Sorry!"
+            android:textColor="#2F414E"
+            android:textFontWeight="700"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:fontFamily="@font/inter_semibold"
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We couldn't find relevent data"
+            android:textColor="#2F414E"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:fontFamily="@font/inter_regular"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="please come back again"
+            android:textColor="#2F414E"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animeRetry"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="error.json"
+            app:lottie_loop="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            >
+            <Button
+                android:id="@+id/btnRetry"
+
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="-5dip"
+                android:layout_marginTop="-5dip"
+                android:layout_marginRight="-5dip"
+                android:layout_marginBottom="-5dip"
+                android:backgroundTint="#103043"
+                android:enabled="true"
+                android:fontFamily="@font/inter_semibold"
+                android:shadowColor="@null"
+                android:stateListAnimator="@null"
+                android:text="Retry"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

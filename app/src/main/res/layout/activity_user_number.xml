@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".login.userNumber">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_back"
+            android:layout_margin="16dp"
+            ></ImageView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Enter mobile number"
+        android:textSize="20sp"
+        android:textFontWeight="700"
+        android:textColor="#2F414E"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="An OTP will be sent for verification"
+        android:fontFamily="@font/inter_regular"
+        android:textColor="#2F414E"
+        android:textSize="14sp"
+        android:textFontWeight="400"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/user_detail_box"
+
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="+91"
+            android:textSize="18sp"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="#8897A2"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="16dp"/>
+        <EditText
+            android:id="@+id/etGetNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@null"
+            android:textColor="#2F414E"
+            android:textSize="18dp"
+            android:maxLength="10"
+            android:inputType="number"
+            android:maxLines="1"
+            android:fontFamily="@font/inter_semibold"
+            android:textFontWeight="700"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/user_detail_box">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#5CC993"
+                android:checkMarkTint="#FFFFFF"
+                android:onClick="onCheckboxClicked"/>
+            <TextView
+                android:fontFamily="@font/inter_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:maxLines="2"
+                android:text="Get important messages and support from Whatsapp, SMS and Call" />
+
+        </LinearLayout>
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            >
+            <Button
+                android:id="@+id/btnVerify"
+                android:layout_width="match_parent"
+                android:layout_height="56sp"
+                android:backgroundTint="#F1F5F8"
+                android:stateListAnimator="@null"
+                android:layout_marginLeft="-5dip"
+                android:layout_marginRight="-5dip"
+                android:layout_marginTop="-5dip"
+                android:layout_marginBottom="-5dip"
+                android:textAllCaps="false"
+                android:text="Proceed"
+                android:visibility="visible"
+                android:textColor="#8897A2"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/anime"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_fileName="data.json"
+                android:visibility="gone"
+                />
+
+
+
+        </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
