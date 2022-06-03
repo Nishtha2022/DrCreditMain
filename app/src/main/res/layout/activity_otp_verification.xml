@@ -58,14 +58,13 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:fontFamily="@font/inter_regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
                 android:layout_marginTop="12dp"
-                android:textSize="14dp"
+                android:fontFamily="@font/inter_regular"
                 android:textFontWeight="400"
-                android:layout_marginLeft="8dp"
-                />
+                android:textSize="14dp" />
 
 
         </LinearLayout>
@@ -110,8 +109,6 @@
                 android:imeOptions="actionNone"
                 android:inputType="number"
                 android:maxLength="1"
-
-
                 android:maxLines="1"
                 android:textColor="#2F414E"
                 android:textCursorDrawable="@null"
@@ -251,24 +248,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:fitsSystemWindows="true"
             android:layout_margin="16dp"
             >
+
             <Button
-                android:fontFamily="@font/inter_semibold"
+                android:id="@+id/btnVerify"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:shadowColor="@null"
-                android:textAllCaps="false"
-                android:text="Proceed"
-                android:textColor="#8897A2"
-                android:id="@+id/btnVerify"
                 android:layout_gravity="bottom"
-                android:enabled="true"
+
                 android:backgroundTint="#F1F5F8"
-                android:layout_marginLeft="-5dip"
-                android:layout_marginRight="-5dip"
-                android:layout_marginTop="-5dip"
-                android:layout_marginBottom="-5dip"/>
+                android:enabled="true"
+                android:stateListAnimator="@null"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Proceed"
+                android:textAllCaps="false"
+                android:textColor="#8897A2"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/anime"
                 android:layout_width="50dp"

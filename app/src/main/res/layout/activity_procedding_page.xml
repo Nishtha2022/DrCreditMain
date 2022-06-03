@@ -48,7 +48,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="credit score"
+            android:text="credit limit"
             android:textColor="#2F414E"
             android:textFontWeight="400"
             android:textSize="16sp"

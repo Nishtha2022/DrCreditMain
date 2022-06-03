@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             override fun run() {
                 if(status == true)
                 {
-                    var intent = Intent(applicationContext,userNumber::class.java)
+                    var intent = Intent(applicationContext,credit_home_page::class.java)
                     startActivity(intent)
                     finish()
                 }

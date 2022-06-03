@@ -32,6 +32,7 @@ class user_details : AppCompatActivity() {
     lateinit var etPincode : EditText
     lateinit var etAddress : EditText
     lateinit var etState : Spinner
+    lateinit var stateCodeSend : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_details)
@@ -95,12 +96,54 @@ class user_details : AppCompatActivity() {
             }
             else
             {
+                var state = etState.selectedItem.toString()
+
+
+               stateCodeSend = when(state){
+                   "Andhra Pradesh" -> "AP"
+                   "Arunachal Pradesh"->"AR"
+                   "Assam"-> "AS"
+                   "Bihar"->"BR"
+                   "Chandigarh"->"CH"
+                   "Chhattisgarh"->"CT"
+                   "Dadra and Nagar Haveli"->"DN"
+                   "Daman and Diu"->"DD"
+                   "Delhi"->"DL"
+                   "Goa"->"GA"
+                   "Gujarat"->"GJ"
+                   "Haryana"-> "HR"
+                   "Himachal Pradesh"->"HP"
+                   "Jammu and Kashmir"->"JK"
+                   "Jharkhand"->"JH"
+                   "Karnataka"->"KA"
+                   "Kerala"->"KL"
+                   "Lakshadweep"->"LD"
+                   "Madhya Pradesh"->"MP"
+                   "Maharashtra"->"MH"
+                   "Manipur"->"MN"
+                   "Meghalaya"->"ML"
+                   "Mizoram"->"MZ"
+                   "Nagaland"->"NL"
+                   "Odisha"->"OR"
+                   "Puducherry"->"PY"
+                   "Punjab"->"PB"
+                   "Rajasthan"->"RJ"
+                   "Sikkim"->"SK"
+                   "Tamil Nadu"->"TN"
+                   "Telangana"->"TG"
+                   "Tripura"->"TR"
+                   "Uttar Pradesh"->"UP"
+                   "Uttarakhand"->"UT"
+                   "West Bengal"->"WB"
+                   else -> "none"
+               }
+
                 var intent = Intent(applicationContext, procedding_page::class.java)
                 intent.putExtra("pan",etPan.text.toString().trim())
                 intent.putExtra("fullName",etFullName.text.toString().trim())
                 intent.putExtra("fatherName",etFatherName.text.toString().trim())
                 intent.putExtra("dob",etDate.text.toString().trim())
-                intent.putExtra("state",etState.getSelectedItem().toString())
+                intent.putExtra("state",stateCodeSend)
                 intent.putExtra("address",etAddress.text.toString().trim())
                 intent.putExtra("pinCode",etPincode.text.toString().trim())
                 startActivity(intent)
@@ -109,7 +152,7 @@ class user_details : AppCompatActivity() {
 
         })
         imgCal = findViewById(R.id.imgCal)
-        imgCal.setOnClickListener(View.OnClickListener {
+        etDate.setOnClickListener(View.OnClickListener {
             val calendar = Calendar.getInstance()
             val year1 = calendar.get(Calendar.YEAR)
             val month1 = calendar.get(Calendar.MONTH)
@@ -134,9 +177,17 @@ class user_details : AppCompatActivity() {
                         Toast.makeText(this,"Enter the correct date ",Toast.LENGTH_SHORT).show()
 
                     }
+                    else if(monthOfYear<9 && dayOfMonth<10)
+                    {
+                        etDate.setText(""+"0"+dayOfMonth+"/"+"0"+(monthOfYear+1)+"/"+year)
+                    }
 
-                    else if(monthOfYear<10) {
+                    else if(monthOfYear<9&&dayOfMonth>10) {
                         etDate.setText("" + dayOfMonth + "/" +"0"+ (monthOfYear + 1) + "/" + year)
+                    }
+                    else if(dayOfMonth<10&&monthOfYear>=9)
+                    {
+                        etDate.setText(""+"0"+dayOfMonth+"/"+(monthOfYear+1)+"/"+year)
                     }
                     else
                     {
@@ -150,6 +201,9 @@ class user_details : AppCompatActivity() {
         })// add validation to date
 
     }
+
+
+
     private val textWatcher = object : TextWatcher{
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 

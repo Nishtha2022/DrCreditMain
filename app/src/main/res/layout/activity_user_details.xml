@@ -256,6 +256,7 @@
                     android:background="@drawable/user_detail_box">
 
                     <EditText
+
                         android:id="@+id/etDate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -263,8 +264,9 @@
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="12dp"
                         android:background="@null"
-                        android:clickable="true"
-                        android:enabled="false"
+                        android:cursorVisible="false"
+                        android:enabled="true"
+                        android:focusableInTouchMode="false"
                         android:fontFamily="@font/inter_semibold"
                         android:inputType="none"
                         android:maxLines="1"
@@ -376,15 +378,24 @@
                         android:id="@+id/etState"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
                         android:background="@null"
                         android:fontFamily="@font/inter_semibold"
                         android:textColor="#2F414E"
                         android:textFontWeight="400"
-                        android:textSize="16sp"
-                        />
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgDrop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:clickable="true"
+                        android:src="@drawable/down_arrow" />
                 </RelativeLayout>
 
 
@@ -459,7 +470,7 @@
                     <Button
                         android:id="@+id/btnConfirm"
                         android:layout_width="match_parent"
-                        android:layout_height="56dp"
+                        android:layout_height="60dp"
                         android:layout_gravity="bottom"
                         android:enabled="false"
                         android:textColor="#8897A2"

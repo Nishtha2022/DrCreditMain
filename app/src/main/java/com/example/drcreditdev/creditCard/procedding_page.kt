@@ -73,6 +73,10 @@ class procedding_page : AppCompatActivity() {
             pinCode= sharedPreferences.getString("pinCode","null")!!
             state = sharedPreferences.getString("state","null")!!
             address = sharedPreferences.getString("address","null")!!
+         /*   if(sharedPreferences.getString("diff","null")!=null)
+            {
+                var diff = sharedPreferences.getString("diff","null")
+            }*/
 
 
         }
@@ -85,7 +89,7 @@ class procedding_page : AppCompatActivity() {
         header["Content-Type"] = "application/json"
         header["Cookie"] = "JSESSIONID=F7AC6F52A47B66466769E1EFE88BBA9B"
 
-        apiClient.getApiService().fetchCreditScore(header,reqCreditScore(fullName, dob,pinCode,"UP",pan,fatherName,address))!!
+        apiClient.getApiService().fetchCreditScore(header,reqCreditScore(fullName, dob,pinCode,state,pan,fatherName,address))!!
             .enqueue(object : Callback<ExampleJson2KtKotlin?>{
 
                 override fun onResponse(
@@ -95,24 +99,87 @@ class procedding_page : AppCompatActivity() {
                     var creditRes = response.body()
                     if(response.code()==200)
                     {
-                        Toast.makeText(this@procedding_page,"we entered",Toast.LENGTH_SHORT).show()
+
                         if (creditRes != null) {
                             Toast.makeText(this@procedding_page,"succedd",Toast.LENGTH_LONG).show()
-                            var score:String = (creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value)!!.toString().trim()
-                            sharedPreferences = getSharedPreferences("drFile", MODE_PRIVATE)
-                            val editor = sharedPreferences.edit()
-                            editor.putString("pan",pan)
-                            editor.putString("fullName",fullName)
-                            editor.putString("fatherName",fatherName)
-                            editor.putString("dob",dob)
-                            editor.putString("pinCode",pinCode)
-                            editor.putString("state",state)
-                            editor.putString("address",address)
-                            editor.putString("score",score)
-                            var intent = Intent(applicationContext, credit_home_page::class.java)
-                            intent.putExtra("score",score)
-                            startActivity(intent)
-                            finish()
+
+                            try {
+                                if(creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!=null) {
+                                    var score: String =
+                                        (creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value)!!.toString()
+                                            .trim()
+                                    if (score != null && score != "-1") {
+                                        sharedPreferences =
+                                            getSharedPreferences("drFile", MODE_PRIVATE)
+                                        val editor = sharedPreferences.edit()
+                                        editor.putString("pan", pan)
+                                        editor.putString("fullName", fullName)
+                                        editor.putString("fatherName", fatherName)
+                                        editor.putString("dob", dob)
+                                        editor.putString("pinCode", pinCode)
+                                        editor.putString("state", state)
+                                        editor.putString("address", address)
+                                        editor.putString("score", score)
+                                        var intent =
+                                            Intent(applicationContext, credit_home_page::class.java)
+                                        intent.putExtra("score", score)
+                                        startActivity(intent)
+                                        finish()
+                                    }
+                                    else
+                                    {
+                                        var intent = Intent(applicationContext, error_page::class.java)
+                                        startActivity(intent)
+                                        finish()
+
+                                    }
+                                }
+
+                                else
+                                {
+                                    var intent = Intent(applicationContext, error_page::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                }
+
+                            }
+                            catch (e:Exception){
+                                var intent = Intent(applicationContext, error_page::class.java)
+                                startActivity(intent)
+                                finish()
+
+                            }
+                            /*if(((creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value).toString()=="-1"
+                                ||  (creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value)==null))
+                            {
+                                var intent = Intent(applicationContext, error_page::class.java)
+                                startActivity(intent)
+                                finish()
+
+                            }
+                            else {
+
+
+                                var score: String =
+                                    (creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value)!!.toString()
+                                        .trim()
+                                sharedPreferences = getSharedPreferences("drFile", MODE_PRIVATE)
+                                val editor = sharedPreferences.edit()
+                                editor.putString("pan", pan)
+                                editor.putString("fullName", fullName)
+                                editor.putString("fatherName", fatherName)
+                                editor.putString("dob", dob)
+                                editor.putString("pinCode", pinCode)
+                                editor.putString("state", state)
+                                editor.putString("address", address)
+                                editor.putString("score", score)
+                                var intent =
+                                    Intent(applicationContext, credit_home_page::class.java)
+                                intent.putExtra("score", score)
+                                startActivity(intent)
+                                finish()
+                            }
+                            */
 
 
                         }
@@ -129,7 +196,7 @@ class procedding_page : AppCompatActivity() {
 
                 override fun onFailure(call: Call<ExampleJson2KtKotlin?>, t: Throwable) {
                     Toast.makeText(this@procedding_page,t.message,Toast.LENGTH_SHORT).show()
-                    var intent = Intent(applicationContext,credit_home_page::class.java)
+                    var intent = Intent(applicationContext,error_page::class.java)
                     startActivity(intent)
                     finish()
 

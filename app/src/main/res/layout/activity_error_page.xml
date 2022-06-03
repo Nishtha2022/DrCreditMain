@@ -83,11 +83,7 @@
                 android:id="@+id/btnRetry"
 
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginLeft="-5dip"
-                android:layout_marginTop="-5dip"
-                android:layout_marginRight="-5dip"
-                android:layout_marginBottom="-5dip"
+                android:layout_height="64dp"
                 android:backgroundTint="#103043"
                 android:enabled="true"
                 android:fontFamily="@font/inter_semibold"
@@ -95,7 +91,8 @@
                 android:stateListAnimator="@null"
                 android:text="Retry"
                 android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
         </LinearLayout>
 
 

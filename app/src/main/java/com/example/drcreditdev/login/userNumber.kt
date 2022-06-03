@@ -3,6 +3,7 @@ package com.example.drcreditdev.login
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -10,6 +11,7 @@ import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.example.drcreditdev.R
@@ -33,7 +35,9 @@ class userNumber : AppCompatActivity() {
     lateinit var anime : LottieAnimationView
     lateinit var checkBox : CheckBox
     lateinit var editTextBg : LinearLayout
+    lateinit var btnBack : ImageView
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -42,15 +46,20 @@ class userNumber : AppCompatActivity() {
         setContentView(R.layout.activity_user_number)
 
 
-
+        btnBack = findViewById(R.id.btnBack)
         checkBox= findViewById(R.id.checkBox)
         editTextBg = findViewById(R.id.linearLayout)
         anime = findViewById(R.id.anime)
         editText = findViewById(R.id.etGetNumber)
         getOtpButton = findViewById(R.id.btnVerify)
+        editText.requestFocus()
         editText.addTextChangedListener(textWatcher)
         onCheckboxClicked(checkBox)
+        btnBack.setOnClickListener(View.OnClickListener {
 
+            finish()
+
+        })
         getOtpButton.setOnClickListener(View.OnClickListener{
             var phoneNo = editText!!.getText().toString()
             if (TextUtils.isEmpty(editText!!.getText().toString())) {
@@ -152,7 +161,7 @@ class userNumber : AppCompatActivity() {
             getOtpButton.setTextColor(Color.parseColor("#FFFFFF"))
         }
         else{
-            Toast.makeText(this, "please tick the box",Toast.LENGTH_SHORT).show()
+
             getOtpButton.isEnabled= false
             getOtpButton.backgroundTintList= ColorStateList.valueOf(
                 ResourcesCompat.getColor(resources,

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,6 +12,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.example.drcreditdev.R
@@ -37,10 +39,12 @@ class Otp_verification : AppCompatActivity() {
     var editText5: EditText? = null
     var editText6: EditText? = null
     var tvEnterOtp : TextView? = null
+    lateinit var imgBack : ImageView
     lateinit var anime : LottieAnimationView
     lateinit var verifyBtn : Button
     lateinit var str : String
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -52,12 +56,15 @@ class Otp_verification : AppCompatActivity() {
         editText4 = findViewById(R.id.editText4)
         editText5 = findViewById(R.id.editText5)
         editText6 = findViewById(R.id.editText6)
+        imgBack = findViewById(R.id.imgBack)
         anime = findViewById(R.id.anime)
         tvEnterOtp = findViewById(R.id.tvEnterOtp)
+        editText1!!.requestFocus()
         verifyBtn.isEnabled = false
 
 
         var textView : TextView = findViewById(R.id.textView2)
+
         if(intent.getStringExtra("phone")!=null) {
             str = intent.getStringExtra("phone") ?: "12345"
             textView.text = str
@@ -70,8 +77,14 @@ class Otp_verification : AppCompatActivity() {
             textView.text = str
 
         }
-        startTimeCounter(this)
         setupOtpInput(str)
+        startTimeCounter(this)
+        imgBack.setOnClickListener(View.OnClickListener {
+            var intent = Intent(applicationContext,userNumber::class.java)
+            startActivity(intent)
+            finish()
+        })
+
 
 
 
