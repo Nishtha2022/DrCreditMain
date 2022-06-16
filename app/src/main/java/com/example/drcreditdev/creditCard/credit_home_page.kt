@@ -49,11 +49,12 @@ class credit_home_page : AppCompatActivity() {
             val editor = sharedpreferences.edit()
             editor.putInt("score",scr)
             editor.putInt("progress",percent)
+            editor.putBoolean("isLoggedIn",true)
             editor.apply()
         }
         else
         {
-            val status = sharedpreferences.getInt("score",756)
+            val status = sharedpreferences.getInt("score",602)
             scoreTv.text = status.toString()
             updateUi(status)
             var percent : Int = (((status-300).toDouble() / 600) * 100).toInt()

@@ -42,7 +42,6 @@ class RefreshPage : AppCompatActivity() {
 
         val retrofitData = retrofitBuilder.getRefreshScore(header)
         val c = Calendar.getInstance()
-
         val year : String = c.get(Calendar.YEAR).toString()
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
@@ -82,11 +81,9 @@ class RefreshPage : AppCompatActivity() {
                 var creditRes = response.body()
                 if(response.code()==200)
                 {
-                    if (creditRes != null) {
-                        if(creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!=null) {
+                        if(creditRes!!.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!=null) {
                             var score: String =
                                 (creditRes.payload?.ccrresponse?.cirreportDataLst!![0].cirreportData!!.scoreDetails[0].value)!!.toString()
-                                    .trim()
                             // sharedPreferences = getSharedPreferences("drFile", MODE_PRIVATE)
                             //   var lastScore = sharedPreferences.getString("score","300")
 
@@ -99,6 +96,11 @@ class RefreshPage : AppCompatActivity() {
                             diff = differnce.toString()
 
                         }*/
+
+                            var editor = sharedPreferences.edit()
+                            editor.putInt("score",score.toInt())
+                            editor.apply()
+
                             var intent = Intent(applicationContext, credit_home_page::class.java)
                             intent.putExtra("score", score)
                             intent.putExtra("date", day)
@@ -114,18 +116,17 @@ class RefreshPage : AppCompatActivity() {
 
                         }
                         else{
-                            var intent = Intent(applicationContext, credit_home_page::class.java)
+                            var intent = Intent(applicationContext, error_page::class.java)
                             startActivity(intent)
                             finish()
 
 
 
                         }
-                    }
 
                     }
                 else{
-                    var intent = Intent(applicationContext, credit_home_page::class.java)
+                    var intent = Intent(applicationContext, error_page::class.java)
                     startActivity(intent)
                     finish()
 
@@ -135,7 +136,7 @@ class RefreshPage : AppCompatActivity() {
 
             override fun onFailure(call: Call<ExampleJson2KtKotlin?>, t: Throwable) {
                 Toast.makeText(applicationContext,t.message,Toast.LENGTH_SHORT).show()
-                var intent = Intent(applicationContext, credit_home_page::class.java)
+                var intent = Intent(applicationContext, error_page::class.java)
                 startActivity(intent)
                 finish()
 

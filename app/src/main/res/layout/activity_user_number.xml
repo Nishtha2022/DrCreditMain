@@ -112,6 +112,7 @@
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="#5CC993"
                 android:checkMarkTint="#FFFFFF"
+                android:checked="true"
                 android:onClick="onCheckboxClicked"/>
             <TextView
                 android:fontFamily="@font/inter_regular"

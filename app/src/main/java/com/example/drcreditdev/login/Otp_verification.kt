@@ -10,14 +10,19 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.KeyEvent
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.content.res.ResourcesCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.example.drcreditdev.R
+import com.example.drcreditdev.creditCard.RefreshPage
+import com.example.drcreditdev.creditCard.error_page
 import com.example.drcreditdev.creditCard.user_details
 import com.example.drcreditdev.dataModal.*
+import com.example.drcreditdev.services.RetrofitApi
+import com.example.example.dataUser
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
@@ -77,7 +82,7 @@ class Otp_verification : AppCompatActivity() {
             textView.text = str
 
         }
-        setupOtpInput(str)
+        setupOtpInput()
         startTimeCounter(this)
         imgBack.setOnClickListener(View.OnClickListener {
             var intent = Intent(applicationContext,userNumber::class.java)
@@ -85,12 +90,17 @@ class Otp_verification : AppCompatActivity() {
             finish()
         })
 
-
+        editText1!!.setOnKeyListener(GenricKeyEvent(editText1!!, null))
+        editText2!!.setOnKeyListener(GenricKeyEvent(editText2!!, editText1))
+        editText3!!.setOnKeyListener(GenricKeyEvent(editText3!!, editText2))
+        editText4!!.setOnKeyListener(GenricKeyEvent(editText4!!,editText3))
+        editText5!!.setOnKeyListener(GenricKeyEvent(editText5!!,editText4))
+        editText6!!.setOnKeyListener(GenricKeyEvent(editText6!!,editText5))
 
 
 
     }
-    private fun verifyButton(str : String) {
+    private fun verifyButton() {
 
         if(editText1!!.text.toString().trim().isEmpty()
             || editText2!!.text.toString().trim().isEmpty()
@@ -102,18 +112,18 @@ class Otp_verification : AppCompatActivity() {
             Toast.makeText(this,"please enter valid otp",Toast.LENGTH_SHORT).show()
 
         }
-        else
-        {   anime.visibility = View.VISIBLE
+        else {
+            anime.visibility = View.VISIBLE
             anime.playAnimation()
             verifyBtn.visibility = View.GONE
 
-            var code:String = editText1!!.text.toString() +
+            var code: String = editText1!!.text.toString() +
                     editText2!!.text.toString() +
                     editText3!!.text.toString() +
                     editText4!!.text.toString() +
                     editText5!!.text.toString() +
                     editText6!!.text.toString()
-            verifyOTP(code,str)
+            verifyOTP(code, str)
         }
     }
 
@@ -143,12 +153,9 @@ class Otp_verification : AppCompatActivity() {
                                 sharedPreferences =  getSharedPreferences("drFile", MODE_PRIVATE)
                                 var editor = sharedPreferences.edit()
                                 editor.putString("authToken",loginResponse.authToken)
-                                editor.putBoolean("isLoggedIn",true)
                                 editor.apply()
+                                checkUser(loginResponse.authToken)
                             }
-                            var intent = Intent(applicationContext, user_details::class.java)
-                            startActivity(intent)
-                            finish()
 
                         }
 
@@ -163,17 +170,83 @@ class Otp_verification : AppCompatActivity() {
         }
         else
         {
-            var intent = Intent(applicationContext, Otp_verification::class.java)
+           /* var intent = Intent(applicationContext, Otp_verification::class.java)
 
             intent.putExtra("message","Enter the correct OTP")
             intent.putExtra("phone2",phone)
             startActivity(intent)
-            finish()
+            finish()*/
+
+            Toast.makeText(this.applicationContext,"Invalid OTP",Toast.LENGTH_SHORT).show()
+            verifyBtn.visibility = View.VISIBLE
+            anime.visibility = View.GONE
+            editText6!!.setBackgroundResource(R.drawable.user_detail_box)
+            editText1!!.text.clear()
+            editText2!!.text.clear()
+            editText3!!.text.clear()
+            editText4!!.text.clear()
+            editText5!!.text.clear()
+            editText6!!.text.clear()
+            editText1!!.requestFocus()
+            editText1!!.setBackgroundResource(R.drawable.number_bg_on_click)
+            setupOtpInput()
+
+
         }
 
     }
 
-    fun setupOtpInput(str:String) {
+    private fun checkUser(authToken: String?) {
+        val header = HashMap<String,String>()
+        header["authToken"] = authToken!!
+        header["Cookie"] = "JSESSIONID=17D464BCCAB458C440F98723E9F1F208"
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://stage.terrafin.tech:8090/").build()
+            .create(RetrofitApi::class.java)
+        val retrofitData = retrofitBuilder.fetchUser(header)
+        retrofitData!!.enqueue(object : Callback<dataUser?>
+        {
+            override fun onResponse(call: Call<dataUser?>, response: Response<dataUser?>) {
+                val userRes = response.body()
+                if(response.code() == 200)
+                {
+                    if(userRes != null)
+                    {
+                        if(userRes.pan == null || userRes.fatherName == null || userRes.dob == null)
+
+                        {
+                            var intent = Intent(applicationContext, user_details::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                        else
+                        {
+                            var intent = Intent(applicationContext, RefreshPage::class.java)
+                            startActivity(intent)
+                            finish()
+                        }
+                    }
+                }
+                else
+                {
+                    Toast.makeText(this@Otp_verification,"Sorry! Couldn't Verrify",Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<dataUser?>, t: Throwable) {
+                var intent = Intent(applicationContext, error_page::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+
+        })
+
+    }
+
+
+    fun setupOtpInput() {          //text watcher for all the boxes when number is entered
 
 
         val textWatcher1 = object : TextWatcher {
@@ -260,7 +333,7 @@ class Otp_verification : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                verifyButton(str)
+                verifyButton()
             }
         }
 
@@ -285,6 +358,23 @@ class Otp_verification : AppCompatActivity() {
 
             }
         }.start()
+    }
+
+
+    class GenricKeyEvent internal constructor(private val currentView: EditText, private val previousView: EditText?) : View.OnKeyListener{
+        override fun onKey(p0: View?, keyCode: Int, event: KeyEvent?): Boolean {
+            if(event!!.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_DEL && currentView.id != R.id.editText1 && currentView.text.isEmpty()) {
+                //If current is empty then previous EditText's number will also be deleted
+                previousView!!.text = null
+                previousView.requestFocus()
+                currentView.setBackgroundResource(R.drawable.user_detail_box)
+                previousView.setBackgroundResource(R.drawable.number_bg_on_click)
+                return true
+            }
+            return false
+        }
+
+
     }
 
 }

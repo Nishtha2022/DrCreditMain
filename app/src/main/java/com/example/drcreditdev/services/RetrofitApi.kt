@@ -5,6 +5,7 @@ import com.example.drcreditdev.dataModal.reqGenrateOtp
 import com.example.drcreditdev.dataModal.reqVerify
 import com.example.drcreditdev.dataModal.resVerify
 import com.example.example.ExampleJson2KtKotlin
+import com.example.example.dataUser
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -20,5 +21,8 @@ interface RetrofitApi {
     fun fetchCreditScore(@HeaderMap headers: HashMap<String,String>,@Body dataModal:reqCreditScore?):Call<ExampleJson2KtKotlin?>?
     @GET("refreshCreditScore")
     fun getRefreshScore(@HeaderMap headers: HashMap<String, String>):Call<ExampleJson2KtKotlin?>?
+
+    @GET("user/")
+    fun fetchUser(@HeaderMap headers : HashMap<String,String>):Call<dataUser>
 
 }

@@ -112,6 +112,7 @@ class procedding_page : AppCompatActivity() {
                                         sharedPreferences =
                                             getSharedPreferences("drFile", MODE_PRIVATE)
                                         val editor = sharedPreferences.edit()
+                                        editor.putBoolean("isLoggedIn",true)
                                         editor.putString("pan", pan)
                                         editor.putString("fullName", fullName)
                                         editor.putString("fatherName", fatherName)

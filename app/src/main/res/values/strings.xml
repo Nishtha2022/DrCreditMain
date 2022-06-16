@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DrCreditDev</string>
+    <string name="app_name">DrCredit</string>
     <string-array name="State">
         <item>Andhra Pradesh</item>
         <item>Arunachal Pradesh</item>
