@@ -1,11 +1,7 @@
 package com.example.drcreditdev.services
 
-import com.example.drcreditdev.dataModal.reqCreditScore
-import com.example.drcreditdev.dataModal.reqGenrateOtp
-import com.example.drcreditdev.dataModal.reqVerify
-import com.example.drcreditdev.dataModal.resVerify
+import com.example.drcreditdev.dataModal.*
 import com.example.example.ExampleJson2KtKotlin
-import com.example.example.dataUser
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*

@@ -10,7 +10,7 @@
         android:id="@+id/drCreditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dr Credit"
+        android:text="@string/app_name2"
         android:fontFamily="@font/inter_bold"
         android:textColor="@color/black"
         android:textFontWeight="800"

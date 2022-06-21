@@ -6,11 +6,11 @@
         android:color="@android:color/transparent"/>
 
     <corners
-        android:bottomRightRadius="4px"
-        android:bottomLeftRadius="4px"
-        android:topLeftRadius="4px"
-        android:topRightRadius="4px"/>
+        android:bottomRightRadius="4dp"
+        android:bottomLeftRadius="4dp"
+        android:topLeftRadius="4dp"
+        android:topRightRadius="4dp"/>
     <stroke
         android:color="#DBE1E6"
-        android:width="1px"/>
+        android:width="1dp"/>
 </shape>

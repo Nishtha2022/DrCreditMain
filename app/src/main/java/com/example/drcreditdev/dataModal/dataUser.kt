@@ -1,4 +1,4 @@
-package com.example.example
+package com.example.drcreditdev.dataModal
 
 import com.google.gson.annotations.SerializedName
 

@@ -43,7 +43,7 @@
                     android:fontFamily="@font/inter_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Credit Score Details"
+                    android:text="@string/credit_score_details"
                     android:textColor="#2F414E"
                     android:textSize="20sp"
                     android:textFontWeight="700"
@@ -53,124 +53,139 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/user_detail_box">
+                android:layout_marginRight="16dp"
+                android:background="@drawable/user_detail_box"
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_marginTop="24dp">
 
-                    <com.triggertrap.seekarc.SeekArc
-                        android:id="@+id/seekArc"
-                        android:layout_width="116dp"
-                        android:layout_height="116dp"
-                        android:layout_gravity="center"
-                        android:padding="30dp"
-                        android:rotation="30"
-                        app:arcColor="#DBE1E6"
-                        app:arcWidth="12dp"
-                        app:clockwise="true"
-                        app:enabled="false"
-                        app:progressWidth="12dp"
-                        app:startAngle="180"
-                        app:sweepAngle="300"
-                        app:touchInside="false"
-                        app:progress="67"
-                        app:progressColor="#FFD700"/>
+                    <RelativeLayout
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:layout_centerInParent="true">
 
-                    <TextView
-                        android:id="@+id/tvScore"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="756"
-                        android:textColor="#2F414E"
-                        android:textFontWeight="700"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        <com.triggertrap.seekarc.SeekArc
+                            android:id="@+id/seekArc"
+                            android:layout_width="128dp"
+                            android:layout_height="128dp"
+                            android:layout_gravity="center"
+                            android:padding="30dp"
+                            android:rotation="30"
+                            app:arcColor="#DBE1E6"
+                            app:arcWidth="12dp"
+                            app:clockwise="true"
+                            app:enabled="false"
+                            app:progress="67"
+                            app:progressColor="#FFD700"
+                            app:progressWidth="12dp"
+                            app:startAngle="180"
+                            app:sweepAngle="300"
+                            app:touchInside="false" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/seekArc"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="300"
-                        android:textColor="#586A77"
-                        android:textFontWeight="400"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/tvScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/_756"
+                            android:textColor="#2F414E"
+                            android:textFontWeight="700"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/seekArc"
-                        android:layout_marginLeft="85dp"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="900"
-                        android:textColor="#586A77"
-                        android:textFontWeight="400"
-                        android:textSize="14sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/seekArc"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/_300"
+                            android:textColor="#586A77"
+                            android:textFontWeight="400"
+                            android:textSize="14sp" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/seekArc"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="95dp"
+                            android:fontFamily="@font/inter_regular"
+                            android:text="@string/_900"
+                            android:textColor="#586A77"
+                            android:textFontWeight="400"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
                 </RelativeLayout>
+
                 <TextView
                     android:id="@+id/comment"
-                    android:fontFamily="@font/inter_semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#479E67"
-                    android:text="Excellent"
-                    android:textSize="16sp"
-                    android:textFontWeight="700"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="16dp"/>
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/excellent"
+                    android:textAllCaps="true"
+                    android:textColor="#479E67"
+                    android:textFontWeight="700"
+                    android:textSize="16sp" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
                     <TextView
-                        android:fontFamily="@font/inter_regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last updated on "
-                        android:textSize="12sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/last_updated_on"
+                        android:textColor="#586A77"
                         android:textFontWeight="400"
-                        android:textColor="#586A77"/>
+                        android:textSize="12sp" />
+
                     <TextView
                         android:id="@+id/date"
-                        android:fontFamily="@font/inter_regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="#586A77"
                         android:textFontWeight="400"
-                        android:textColor="#586A77"/>
+                        android:textSize="12sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginRight="12dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
                     android:orientation="vertical">
-                <Button
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:id="@+id/btnGet"
-                    android:fontFamily="@font/inter_semibold"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:background="@drawable/rounded_corner"
-                    android:text="Get latest score"
-                    android:textAllCaps="false"
-                    android:backgroundTint="#254D54"
-                    />
 
-            </LinearLayout>
+                    <Button
+
+                        android:id="@+id/btnGet"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:background="@drawable/rounded_corner"
+                        android:backgroundTint="#254D54"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/get_latest_score"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
 
 
             </LinearLayout>
@@ -178,7 +193,7 @@
                 android:fontFamily="@font/inter_semibold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Last credit analysis"
+                android:text="@string/last_credit_analysis"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:textColor="#2F414E"
@@ -218,17 +233,17 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_bold"
-                                android:text="3"
+                                android:text="@string/_3"
                                 android:textColor="#479E67"
                                 android:textFontWeight="700"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:fontFamily="@font/inter_semibold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=" points"
+                                android:fontFamily="@font/inter_semibold"
+                                android:text="@string/points"
                                 android:textColor="#479E67"
                                 android:textFontWeight="700"
                                 android:textSize="16sp"
@@ -236,14 +251,14 @@
                         </LinearLayout>
 
                         <TextView
-                            android:fontFamily="@font/inter_regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginRight="20dp"
+                            android:fontFamily="@font/inter_regular"
                             android:maxLines="2"
-                            android:text="overall increase in credit limit"
+                            android:text="@string/overall_increase_in_credit_limit"
                             android:textColor="#2F414E"
                             android:textFontWeight="400"
                             android:textSize="12sp" />
@@ -263,12 +278,12 @@
                                 android:gravity="center_horizontal">
 
                                 <TextView
-                                    android:fontFamily="@font/inter_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:text="high impact"
+                                    android:fontFamily="@font/inter_regular"
+                                    android:text="@string/high_impact"
                                     android:textColor="#479E67"
                                     android:textFontWeight="400"
                                     android:textSize="12sp" />
@@ -299,7 +314,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_semibold"
-                                android:text="10%"
+                                android:text="@string/_10"
                                 android:textColor="#2F414E"
                                 android:textFontWeight="700"
                                 android:textSize="24sp"
@@ -313,9 +328,9 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="4dp"
                             android:layout_marginRight="8dp"
-                            android:fontFamily="@font/inter_semibold"
+                            android:fontFamily="@font/inter_regular"
                             android:maxLines="2"
-                            android:text="lesser credit utilization than previous bill"
+                            android:text="@string/lesser_credit_utilization_than_previous_bill"
                             android:textColor="#2F414E"
                             android:textFontWeight="400"
                             android:textSize="12sp" />
@@ -340,7 +355,7 @@
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
                                     android:fontFamily="@font/inter_regular"
-                                    android:text="low impact"
+                                    android:text="@string/low_impact"
                                     android:textColor="#2F414E"
                                     android:textFontWeight="400"
                                     android:textSize="12sp" />
@@ -374,7 +389,7 @@
                             android:fontFamily="@font/inter_semibold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="100%"
+                            android:text="@string/_100"
                             android:textColor="#2F414E"
                             android:textFontWeight="700"
                             android:textSize="24sp"
@@ -391,7 +406,7 @@
                         android:layout_marginTop="4dp"
                         android:layout_marginRight="50dp"
                         android:maxLines="2"
-                        android:text="repayment done on time"
+                        android:text="@string/repayment_done_on_time"
                         android:textColor="#2F414E"
                         android:textFontWeight="400"
                         android:textSize="12sp" />
@@ -416,7 +431,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="6dp"
                                 android:layout_marginBottom="6dp"
-                                android:text="high impact"
+                                android:text="@string/high_impact"
                                 android:textColor="#479E67"
                                 android:textFontWeight="400"
                                 android:textSize="12sp" />

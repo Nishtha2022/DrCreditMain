@@ -36,7 +36,7 @@
             android:fontFamily="@font/inter_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter the OTP"
+            android:text="@string/enter_the_otp"
             android:textSize="20dp"
             android:textColor="#2F414E"
             android:textFontWeight="700"
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Sent to +91"
+                android:text="@string/sent_to_91"
                 android:textFontWeight="400"
                 android:textSize="14dp" />
 
@@ -217,7 +217,7 @@
             android:fontFamily="@font/inter_regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="You will receive an OTP within"
+            android:text="@string/you_will_receive_an_otp_within"
             android:layout_marginLeft="16dp"
             android:textSize="14sp"
             android:textFontWeight="400"
@@ -262,7 +262,7 @@
                 android:enabled="true"
                 android:stateListAnimator="@null"
                 android:fontFamily="@font/inter_semibold"
-                android:text="Proceed"
+                android:text="@string/proceed"
                 android:textAllCaps="false"
                 android:textColor="#8897A2"
                 style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />

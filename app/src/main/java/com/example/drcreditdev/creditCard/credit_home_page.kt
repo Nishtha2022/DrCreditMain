@@ -66,11 +66,11 @@ class credit_home_page : AppCompatActivity() {
             &&intent.getStringExtra("year")!=null)
         {
 
-          date.text = intent.getStringExtra("day").toString()+intent.getStringExtra("month")+"'"+intent.getStringExtra("year")
+          date.text = intent.getStringExtra("day").toString()+" "+intent.getStringExtra("month")+"'"+intent.getStringExtra("year")
         }
         else
         {
-            date.text=sharedpreferences.getString("day","12").toString()+sharedpreferences.getString("month","Apr").toString()+"'"+sharedpreferences.getString("year","22").toString()
+            date.text=sharedpreferences.getString("day","12").toString()+" "+sharedpreferences.getString("month","Apr").toString()+"'"+sharedpreferences.getString("year","22").toString()
         }
         btnGet.setOnClickListener(View.OnClickListener{
 

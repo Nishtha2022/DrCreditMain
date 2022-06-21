@@ -3,25 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable-anydpi/down_arrow.xml" value="0.1215" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.188" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/credit_bg_black.xml" value="0.1075" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/credit_card_bg_green.xml" value="0.1075" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/ic_launcher.xml" value="0.188" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/ic_launcher_background.xml" value="0.188" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/number_bg_on_click.xml" value="0.1075" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/drawable/user_detail_box.xml" value="0.1075" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_credit_home_page.xml" value="0.25" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_error_page.xml" value="0.125" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_main.xml" value="0.14175724637681159" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_otp_verification.xml" value="0.165" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_procedding_page.xml" value="0.14175724637681159" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_refresh_page.xml" value="0.1431159420289855" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_user_details.xml" value="0.165" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/layout/activity_user_number.xml" value="0.165" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
-        <entry key="..\:/Users/nisht/DrCreditDev/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_credit_home_page.xml" value="0.125" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_error_page.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_main.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_otp_verification.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_procedding_page.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_refresh_page.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_user_details.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/nisht/Downloads/DrCreditDev_fixed/DrCreditDev/app/src/main/res/layout/activity_user_number.xml" value="0.13541666666666666" />
       </map>
     </option>
   </component>
