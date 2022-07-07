@@ -1,77 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".creditCard.RefreshPage"
-    android:orientation="vertical">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginRight="23dp">
-
-        <TextView
-            android:fontFamily="@font/inter_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/checking_your_credit_score"
-            android:textColor="#2F414E"
-            android:textFontWeight="700"
-            android:textSize="20sp" />
-
-    </RelativeLayout>
+    tools:context=".creditCardUI.refreshPageUI.RefreshPage"
+    >
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.drcreditdev.creditCardUI.refreshPageUI.RefreshPageViewModel" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:gravity="center"
+        android:layout_height="match_parent"
+
         android:orientation="vertical">
-
-        <TextView
-            android:fontFamily="@font/inter_regular"
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/we_ll_use_it_to_find_you_an_aproriate"
-            android:textColor="#2F414E"
-            android:textFontWeight="400"
-            android:textSize="16sp"
-            android:layout_gravity="center"/>
-        <TextView
-            android:fontFamily="@font/inter_regular"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="115dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginRight="23dp">
+
+            <TextView
+                android:fontFamily="@font/inter_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/checking_your_credit_score"
+                android:textColor="#2F414E"
+                android:textFontWeight="700"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/credit_limit"
-            android:textColor="#2F414E"
-            android:textFontWeight="400"
-            android:textSize="16sp"
-            android:layout_gravity="center"/>
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/inter_regular"
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/we_ll_use_it_to_find_you_an_aproriate"
+                android:textColor="#2F414E"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                android:layout_gravity="center"/>
+            <TextView
+                android:fontFamily="@font/inter_regular"
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/credit_limit"
+                android:textColor="#2F414E"
+                android:textFontWeight="400"
+                android:textSize="16sp"
+                android:layout_gravity="center"/>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:fitsSystemWindows="true"
-        android:orientation="vertical">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/anime"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:scaleType="center"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:lottie_fileName="data (1).json"/>
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/anime"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:scaleType="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_fileName="data (1).json"/>
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>

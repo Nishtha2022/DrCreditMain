@@ -1,5 +1,6 @@
 package com.example.drcreditdev.services
 
+import com.example.drcreditdev.repository.RetrofitApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,6 +9,7 @@ import java.util.concurrent.TimeUnit
 
 class ApiClientRefresh {
     private lateinit var apiService: RetrofitApi
+    private val base_url = "https://stage.terrafin.tech:8090/underwriting/"
     fun getApiService(): RetrofitApi {
 
         val logging = HttpLoggingInterceptor()
@@ -23,7 +25,7 @@ class ApiClientRefresh {
 
         if (!::apiService.isInitialized) {
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://stage.terrafin.tech:8090/underwriting/")
+                .baseUrl(base_url)
                 .addConverterFactory(GsonConverterFactory.create()).client(okHttpClient)
                 .build()
 

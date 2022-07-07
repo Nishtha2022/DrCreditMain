@@ -1,4 +1,4 @@
-package com.example.drcreditdev.creditCard
+package com.example.drcreditdev.creditCardUI.error
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -8,8 +8,10 @@ import android.view.View
 import android.widget.Button
 import com.airbnb.lottie.LottieAnimationView
 import com.example.drcreditdev.R
+import com.example.drcreditdev.creditCardUI.userDetailPageUI.User_details
 
-class error_page : AppCompatActivity() {
+
+class Error_page : AppCompatActivity() {
     lateinit var sharedPreferences:SharedPreferences
     lateinit var btnRetry : Button
     lateinit var anime : LottieAnimationView
@@ -21,7 +23,7 @@ class error_page : AppCompatActivity() {
         anime.playAnimation()
         btnRetry.setOnClickListener(View.OnClickListener{
            sharedPreferences = getSharedPreferences("drFile", MODE_PRIVATE)
-            var intent = Intent(applicationContext,user_details::class.java)
+            var intent = Intent(applicationContext, User_details::class.java)
             intent.putExtra("msg","Please enter the correct details")
             startActivity(intent)
             finish()

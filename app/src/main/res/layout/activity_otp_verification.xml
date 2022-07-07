@@ -1,287 +1,302 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".login.Otp_verification"
-    android:orientation="vertical">
+    tools:context=".login.otpVerificationUI.Otp_verification">
+    <data>
+        <variable
+            name="otpView"
+            type="com.example.drcreditdev.login.otpVerificationUI.OtpVerificationViewModel" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_height="match_parent"
 
-        <ImageView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/arrow_back"
-            android:id="@+id/imgBack"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
-
-        <TextView
-            android:id="@+id/tvEnterOtp"
-            android:fontFamily="@font/inter_bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_the_otp"
-            android:textSize="20dp"
-            android:textColor="#2F414E"
-            android:textFontWeight="700"
-            android:textStyle="bold"/>
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:fontFamily="@font/inter_regular"
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@string/sent_to_91"
-                android:textFontWeight="400"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/inter_regular"
-                android:textFontWeight="400"
-                android:textSize="14dp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="@null"
             android:orientation="horizontal"
-            android:layout_weight="1"
-            android:layout_marginTop="40dp"
-            >
-            <EditText
-                android:fontFamily="@font/inter_bold"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:enabled="true"
-                android:layout_marginTop="10dp"
-                android:cursorVisible="false"
-                android:imeOptions="actionNone"
-                android:maxLength="1"
-                android:maxLines="1"
-                android:inputType="number"
-                android:gravity="center"
-                android:id="@+id/editText1"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textFontWeight="700"
-                android:textCursorDrawable="@null"
-                android:textColor="#2F414E"
-                android:background="@drawable/number_bg_on_click"/>
+            android:layout_marginTop="20dp">
 
-            <EditText
-                android:id="@+id/editText2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/user_detail_box"
-                android:cursorVisible="false"
-                android:enabled="true"
-                android:gravity="center"
-                android:imeOptions="actionNone"
-                android:inputType="number"
-                android:maxLength="1"
-                android:maxLines="1"
-                android:textColor="#2F414E"
-                android:textCursorDrawable="@null"
-                android:textSize="18sp"
-                android:textFontWeight="700"
-                android:textStyle="bold"
-                android:fontFamily="@font/inter_bold"/>
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/arrow_back"
+                android:id="@+id/imgBack"/>
 
-            <EditText
-                android:id="@+id/editText3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/user_detail_box"
-                android:cursorVisible="false"
-                android:enabled="true"
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <TextView
+                android:id="@+id/tvEnterOtp"
                 android:fontFamily="@font/inter_bold"
-                android:gravity="center"
-                android:imeOptions="actionNone"
-                android:inputType="number"
-                android:maxLength="1"
-                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_the_otp"
+                android:textSize="20dp"
                 android:textColor="#2F414E"
-                android:textCursorDrawable="@null"
                 android:textFontWeight="700"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-            <EditText
-                android:fontFamily="@font/inter_bold"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:enabled="true"
-                android:cursorVisible="false"
-                android:imeOptions="actionNone"
-                android:maxLength="1"
-                android:maxLines="1"
-                android:inputType="number"
-                android:gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:id="@+id/editText4"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textFontWeight="700"
-                android:textCursorDrawable="@null"
-                android:textColor="#2F414E"
-                android:background="@drawable/user_detail_box"/>
-            <EditText
-                android:fontFamily="@font/inter_bold"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:enabled="true"
-                android:cursorVisible="false"
-                android:imeOptions="actionNone"
-                android:maxLength="1"
-                android:maxLines="1"
-                android:inputType="number"
-                android:gravity="center"
-                android:id="@+id/editText5"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textFontWeight="700"
-                android:textCursorDrawable="@null"
-                android:textColor="#2F414E"
-                android:background="@drawable/user_detail_box"/>
-            <EditText
-                android:fontFamily="@font/inter_bold"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:enabled="true"
-                android:cursorVisible="false"
-                android:imeOptions="actionNone"
-                android:maxLength="1"
-                android:maxLines="1"
-                android:inputType="number"
-                android:gravity="center"
-                android:id="@+id/editText6"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textFontWeight="700"
-                android:textCursorDrawable="@null"
-                android:textColor="#2F414E"
-                android:background="@drawable/user_detail_box"/>
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:fontFamily="@font/inter_regular"
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/sent_to_91"
+                    android:textFontWeight="400"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textFontWeight="400"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="40dp"
+                >
+                <EditText
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:enabled="true"
+
+                    android:layout_marginTop="10dp"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionNone"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/editText1"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textFontWeight="700"
+                    android:textCursorDrawable="@null"
+                    android:textColor="#2F414E"
+                    android:background="@drawable/number_bg_on_click"/>
+
+                <EditText
+                    android:id="@+id/editText2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/user_detail_box"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+                    android:gravity="center"
+                    android:imeOptions="actionNone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:textColor="#2F414E"
+                    android:textCursorDrawable="@null"
+                    android:textSize="18sp"
+                    android:textFontWeight="700"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter_bold"/>
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/user_detail_box"
+                    android:cursorVisible="false"
+                    android:enabled="true"
+
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:imeOptions="actionNone"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:textColor="#2F414E"
+                    android:textCursorDrawable="@null"
+                    android:textFontWeight="700"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:enabled="true"
+                    android:text="@={otpView.etText4}"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionNone"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/editText4"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textFontWeight="700"
+                    android:textCursorDrawable="@null"
+                    android:textColor="#2F414E"
+                    android:background="@drawable/user_detail_box"/>
+                <EditText
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:enabled="true"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionNone"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:gravity="center"
+
+                    android:id="@+id/editText5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textFontWeight="700"
+                    android:textCursorDrawable="@null"
+                    android:textColor="#2F414E"
+                    android:background="@drawable/user_detail_box"/>
+                <EditText
+                    android:fontFamily="@font/inter_bold"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:enabled="true"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionNone"
+                    android:maxLength="1"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:id="@+id/editText6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+
+                    android:textFontWeight="700"
+
+                    android:textCursorDrawable="@null"
+                    android:textColor="#2F414E"
+                    android:background="@drawable/user_detail_box"/>
+
+
+
+            </LinearLayout>
 
 
 
         </LinearLayout>
 
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="36dp"
-        >
-
-        <TextView
-            android:fontFamily="@font/inter_regular"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/you_will_receive_an_otp_within"
-            android:layout_marginLeft="16dp"
-            android:textSize="14sp"
-            android:textFontWeight="400"
-            android:textColor="#354849"/>
-
-        <TextView
-            android:fontFamily="@font/inter_semibold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/timer"
-            android:textColor="#354849"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:textStyle="bold"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:gravity="bottom"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:fitsSystemWindows="true">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:fitsSystemWindows="true"
-            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_marginTop="36dp"
             >
 
-            <Button
-                android:id="@+id/btnVerify"
+            <TextView
+                android:fontFamily="@font/inter_regular"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:text="@string/you_will_receive_an_otp_within"
+                android:layout_marginLeft="16dp"
+                android:textSize="14sp"
+                android:textFontWeight="400"
+                android:textColor="#354849"/>
 
-                android:backgroundTint="#F1F5F8"
-                android:enabled="true"
-                android:stateListAnimator="@null"
+            <TextView
                 android:fontFamily="@font/inter_semibold"
-                android:text="@string/proceed"
-                android:textAllCaps="false"
-                android:textColor="#8897A2"
-                style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/anime"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:scaleType="fitCenter"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"
-                app:lottie_fileName="data.json"
-                android:visibility="gone"
-                />
-        </FrameLayout>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/timer"
+                android:textColor="#354849"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:fitsSystemWindows="true">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:fitsSystemWindows="true"
+                android:layout_margin="16dp"
+                >
+
+                <Button
+                    android:id="@+id/btnVerify"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_gravity="bottom"
+
+                    android:backgroundTint="#F1F5F8"
+                    android:enabled="true"
+                    android:stateListAnimator="@null"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/proceed"
+                    android:textAllCaps="false"
+                    android:textColor="#8897A2"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" />
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/anime"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitCenter"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_fileName="data.json"
+                    android:visibility="gone"
+                    />
+            </FrameLayout>
 
 
 
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</layout>
