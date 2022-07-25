@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">DrCredit</string>
+    <string name="credit_score_details">Credit Score Details</string>
+    <string name="_756">756</string>
+    <string name="_300">300</string>
+    <string name="_900">900</string>
+    <string name="excellent">Excellent</string>
+    <string name="last_updated_on">Last updated on</string>
+    <string name="get_latest_score">Get latest score</string>
+    <string name="last_credit_analysis">Last credit analysis</string>
+    <string name="_3">3</string>
+    <string name="points">points</string>
+    <string name="overall_increase_in_credit_limit">overall increase in credit limit</string>
+    <string name="high_impact">high impact</string>
+    <string name="_10">10%</string>
+    <string name="lesser_credit_utilization_than_previous_bill">lesser credit utilization than previous bill</string>
+    <string name="low_impact">low impact</string>
+    <string name="_100">100%</string>
+    <string name="repayment_done_on_time">repayment done on time</string>
+    <string name="sorry">Sorry!</string>
+    <string name="we_couldn_t_find_relevent_data">We couldn\'t find relevent data</string>
+    <string name="please_come_back_again">please come back again</string>
+    <string name="retry">Retry</string>
+    <string name="app_name2">Dr Credit</string>
+    <string name="enter_the_otp">Enter the OTP</string>
+    <string name="sent_to_91">Sent to +91</string>
+    <string name="you_will_receive_an_otp_within">You will receive an OTP within</string>
+    <string name="proceed">Proceed</string>
+    <string name="checking_your_credit_score">Checking your credit score</string>
+    <string name="we_ll_use_it_to_find_you_an_aproriate">We\'ll use it to find you an aproriate</string>
+    <string name="credit_limit">credit limit</string>
+    <string name="we_will_use_this_to_find_your_credit_details">We will use this to find your Credit Details</string>
+    <string name="enter_pan_details">Enter PAN Details</string>
+    <string name="enter_pan_number">Enter PAN Number</string>
+    <string name="full_name">Full Name</string>
+    <string name="as_on_pan_card">(as on PAN card)</string>
+    <string name="father_s_name">Father\'s Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="address">Address</string>
+    <string name="state">State</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_mobile_number">Enter mobile number</string>
+    <string name="an_otp_will_be_sent_for_verification">An OTP will be sent for verification</string>
+    <string name="_91">+91</string>
+    <string name="get_important_messages_and_support_from_whatsapp_sms_and_call">Get important messages and support from Whatsapp, SMS and Call</string>
+    <string-array name="State">
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+</resources>

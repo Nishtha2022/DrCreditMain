@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.5.30'
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.cashfree.com/release'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath "com.android.databinding:dataBinder:1.0-rc1"
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.4.2"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+        classpath 'com.google.firebase:perf-plugin:1.4.1'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.2.0-alpha02"
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "https://sdk.smartlook.com/android/release"
+        }
+        maven {
+            url 'https://maven.cashfree.com/release'
+        }
+        flatDir {
+            dirs 'src/main/digio_sdk'
+        }
+    }
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
