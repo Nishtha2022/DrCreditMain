@@ -1,4 +1,5 @@
 package com.example.drcreditdev.services
+
 import com.example.drcreditdev.repository.RetrofitApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -6,9 +7,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-
-class ApiClientCredit {
-    private  val base_url = "https://stage.terrafin.tech:8090/underwriting/creditScore/"
+class ApiClientVerOTP {
+    private  val base_url = "https://stage.terrafin.tech:8090/user/"
     private lateinit var apiService: RetrofitApi
 
     fun getApiService(): RetrofitApi {

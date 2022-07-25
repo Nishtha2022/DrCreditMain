@@ -1,20 +1,19 @@
-package com.example.drcreditdev.creditCard
+package com.example.drcreditdev.creditCardUI.creditPage
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.drcreditdev.R
+import com.example.drcreditdev.creditCardUI.refreshPageUI.RefreshPage
 import com.triggertrap.seekarc.SeekArc
 
-class credit_home_page : AppCompatActivity() {
+class Credit_home_page : AppCompatActivity() {
     lateinit var imgBack : ImageView
     lateinit var date: TextView
     lateinit var comment : TextView
@@ -66,15 +65,15 @@ class credit_home_page : AppCompatActivity() {
             &&intent.getStringExtra("year")!=null)
         {
 
-          date.text = intent.getStringExtra("day").toString()+intent.getStringExtra("month")+"'"+intent.getStringExtra("year")
+          date.text = intent.getStringExtra("day").toString()+" "+intent.getStringExtra("month")+"'"+intent.getStringExtra("year")
         }
         else
         {
-            date.text=sharedpreferences.getString("day","12").toString()+sharedpreferences.getString("month","Apr").toString()+"'"+sharedpreferences.getString("year","22").toString()
+            date.text=sharedpreferences.getString("day","12").toString()+" "+sharedpreferences.getString("month","Apr").toString()+"'"+sharedpreferences.getString("year","22").toString()
         }
         btnGet.setOnClickListener(View.OnClickListener{
 
-            var intent = Intent(applicationContext,RefreshPage::class.java)
+            var intent = Intent(applicationContext, RefreshPage::class.java)
             startActivity(intent)
             finish()
 
